@@ -1,6 +1,6 @@
 #
 # Time is done in minutes
-LunarJoinTitle: '&7Welcome to &d&lGlacial &fMap 1&7!'
+LunarJoinTitle: '&7Welcome to &6&lSquads &fMap 1&7!'
 backend:
   driver: FLAT_FILE
   redis:
@@ -17,13 +17,13 @@ backend:
       password: password
       authDb: admin
 server:
-  name: Polars
-  website: https://glacial.cc
-  teamspeak: ts.glacial.cc
-  store: https://store.glacial.cc
+  name: Squads
+  website: https://www.eytril.org
+  teamspeak: ts.eytril.org
+  store: https://store.eytril.org
   color:
-    primary: '&d'
-    secondary: '&5'
+    primary: '&6'
+    secondary: '&e'
 map:
   number: 1
   start-date: 07/18/2021
@@ -36,11 +36,11 @@ features:
   death-lightning: true
   item-kills-and-deaths: true
   hidden-spawn-players: false
-  staff-chat: true
-  manage-chat: true
-  report: true
-  notes: true
-  request: true
+  staff-chat: false
+  manage-chat: false
+  report: false
+  notes: false
+  request: false
   auto-respawn: true
   msg: true
   time: false
@@ -106,7 +106,7 @@ factions:
     worlds:
       default:
         warzone-build-limit: 300
-        warzone: 750
+        warzone: 1000
       nether:
         warzone-build-limit: 80
         warzone: 200
@@ -217,12 +217,12 @@ board:
     - '%rampage_lines%'
     - '%extraction_lines%'
   mod-mode:
-    - '&d&lStaff Mode'
-    - '&7* &5Vanished: &c%vanished%'
-    - '&7* &5Gamemode: &c%gamemode%'
-    - '&7* &5Modules: %modules%'
-    - '&7* &5Bypass: &c%modmode_bypass%<display=%has_permission_hcf.command.mod.bypass%'
-    - '&7* &5Online: &f%online%'
+    - '&6&lStaff Mode'
+    - '&7* &fVanished: &c%vanished%'
+    - '&7* &fGamemode: &c%gamemode%'
+    - '&7* &fModules: %modules%'
+    - '&7* &fBypass: &c%modmode_bypass%<display=%has_permission_hcf.command.mod.bypass%'
+    - '&7* &fOnline: &f%online%'
   koth:
     normal: '&9&l%name%&7: &c%time%'
     special: '&5&l%name%&7: &c%time%'
@@ -548,9 +548,9 @@ rank-broadcast:
   time: 5
   messages:
     broadcast: |-
-      &fOnline &d&lGlacial &fRank Players &7» &r%players%
-      &fBuy a &d&lGlacial &fRank @ https://store.glacial.cc
-    no-players: No online Glacial players
+      &fOnline &6&lEytro; &fRank Players &7» &r%players%
+      &fBuy a &6&lGlacial &fRank @ https://store.eytril.org
+    no-players: No online Eytril players
     joiner:
       color: '&a'
       character: ', '
@@ -1253,7 +1253,7 @@ Ranks:
   CHATMOD: '&5'
   FAMOUS: '&d'
   YOUTUBER: '&d'
-  GLACIAL: '&d'
+  Eytril: '&d'
   STREAMER: '&d'
   POLAR: '&e'
   ARCTIC: '&c'
