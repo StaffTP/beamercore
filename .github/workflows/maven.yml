@@ -1,0 +1,28 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2.3.4
+    - name: Set up JDK
+      uses: actions/setup-java@v2.1.0
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+    - name: Create artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: vHCF
+        retention-days: 7
+        path: |
+          target/vHCF*.jar

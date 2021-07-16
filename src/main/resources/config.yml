@@ -1,0 +1,1265 @@
+#
+# Time is done in minutes
+LunarJoinTitle: '&7Welcome to &d&lGlacial &fMap 1&7!'
+backend:
+  driver: FLAT_FILE
+  redis:
+    host: localhost
+    port: 6379
+    pass: ''
+  mongo:
+    host: localhost
+    port: 27017
+    database: hcf
+    auth:
+      enable: false
+      username: root
+      password: password
+      authDb: admin
+server:
+  name: Polars
+  website: https://glacial.cc
+  teamspeak: ts.glacial.cc
+  store: https://store.glacial.cc
+  color:
+    primary: '&d'
+    secondary: '&5'
+map:
+  number: 1
+  start-date: 07/18/2021
+features:
+  kitmap: false
+  tablist: true
+  scoreboard: true
+  deathbans: true
+  autosmelt: true
+  death-lightning: true
+  item-kills-and-deaths: true
+  hidden-spawn-players: false
+  staff-chat: true
+  manage-chat: true
+  report: true
+  notes: true
+  request: true
+  auto-respawn: true
+  msg: true
+  time: false
+  weather: false
+welcome:
+  starting-balance: 250
+  starting-balance-message: true
+factions:
+  name:
+    min: 3
+    max: 16
+    blocked:
+      - EOTW
+      - SOTW
+      - MineHQ
+      - HCTeams
+      - HCSquads
+      - MCTeams
+      - VeltPvP
+      - Arcane
+  colors:
+    members: GREEN
+    allies: DARK_PURPLE
+    tagged: DARK_RED
+    enemies: YELLOW
+    focused: LIGHT_PURPLE
+  safezone:
+    outside-safezone-blocked-cmds:
+      - shop
+      - shopgui
+      - guishop
+      - shopguiplus:shop
+      - shopguiplus:shopgui
+      - shopguiplus:guishop
+  members:
+    max: 10
+    instant-home-radius: 25
+  dtr:
+    max: 5.5
+    multiple: 1.1
+    death: 1.0
+    regen:
+      start-delay: 60
+      delay: 3
+      increment: 0.03
+  allies:
+    max: 1
+    attacking:
+      prevent: true
+      damage-multiplier: 0.5
+  claim:
+    buffer: 1
+    glass-buffer: 10
+    glass-color: 14
+    price:
+      multiplier: 250
+      selling-multiplier: 0.5
+      per-block: 0.25
+      volume-divisor: 220
+  home:
+    disable-in-end: false
+  sizes:
+    worlds:
+      default:
+        warzone-build-limit: 300
+        warzone: 750
+      nether:
+        warzone-build-limit: 80
+        warzone: 200
+  points:
+    steal-on-faction-raidable: 25
+    worlds:
+      world:
+        kill-points: 1
+        koth-points: 20
+        outpost-points: 15
+        conquest-points: 50
+        citadel-points: 100
+      nether:
+        kill-points: 2
+        koth-points: 20
+      end:
+        kill-points: 3
+        koth-points: 20
+koth:
+  time: 5
+  special-times:
+    citadel: 15
+  on-capture:
+    - bc &d%name% &6(%faction%) &ehas just captured &9%koth%!
+    - bc &6%faction% &ehas received their rewards!
+    - cr givekey %name% EVENT 5
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+conquest:
+  time: 30
+  points-per-cap: 5
+  points-loss-per-death: 0
+  max-points: 250
+  on-capture:
+    - bc &d%name% &6(%faction%) &ehas just captured &9%conquest%!
+    - cr givekey %name% EVENT 10
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+    - bc &f
+dtc:
+  points-needed-to-win: 50
+  points-per-core-break: 1
+  points-loss-per-death: 1
+  on-win:
+    - bc &d%name% &6(%faction%) &ehas just captured &9%conquest%!
+    - cr givekey %name% EVENT 5
+  material: ENDER_STONE
+rampage:
+  on-win:
+    - bc &d%name% &ehas just captured Rampage!!
+    - cr givekey %name% EVENT 5
+mountain:
+  reset-time: 120
+board:
+  title: '%primary%&l%servername% &7⎜ &fMap 1'
+  lines:
+    - '%customservertimer_lines%'
+    - '&a&lSale&7: &c%server_sale_timer%<display=%server_has_sale_timer%'
+    - '&a&lKey Sale&7: &c%server_key-sale_timer%<display=%server_has_key-sale_timer%'
+    - '&b&lKey All&7: &c%server_key-all_timer%<display=%server_has_key-all_timer%'
+    - '&4&lKills&7: &c%kills%<display=%is_kitmap%'
+    - '&4&lDeaths&7: &c%deaths%<display=%is_kitmap%'
+    - '&4&lKillstreak&7: &c%streak%<display=%is_kitmap%'
+    - '&a&lActive Kit&7: %active_class%<display=%has_active_class%'
+    - ' &7* &eEnergy&7: &f%bard_energy%<display=%is_bard%'
+    - ' &7* &eEffect&7: &f%player_bard-effect_timer%<display=%player_has_bard-effect_timer%'
+    - ' &7* &eSpeed&7: &f%player_speed-effect_timer%<display=%player_has_speed-effect_timer%'
+    - ' &7* &eJump&7: &f%player_jump-effect_timer%<display=%player_has_jump-effect_timer%'
+    - ' &7* &eBackstab&7: &f%player_backstab_timer%<display=%player_has_backstab_timer%'
+    - '&5&lEnderpearl&7: &c%player_pearl_timer%<display=%player_has_pearl_timer%'
+    - '&c&lSpawn Tag&7: &c%player_combat_timer%<display=%player_has_combat_timer%'
+    - '&6&lApple&7: &c%player_apple_timer%<display=%player_has_apple_timer%'
+    - '&6&lGapple&7: &c%player_gapple_timer%<display=%player_has_gapple_timer%'
+    - '&9&lHome&7: &c%player_home_timer%<display=%player_has_home_timer%'
+    - '&4&lStuck&7: &c%player_stuck_timer%<display=%player_has_stuck_timer%'
+    - '&4&lLogout&7: &c%player_logout_timer%<display=%player_has_logout_timer%'
+    - '&6&lArcher Tag&7: &c%player_archer-mark_timer%<display=%player_has_archer-mark_timer%'
+    - '&a&lStarting&7: &c%player_starting_timer%<display=%player_has_starting_timer%'
+    - '&a&lPvP Timer&7: &c%player_pvptimer_timer%<display=%player_has_pvptimer_timer%'
+    - '&c&lSpawn&7: &c%player_spawn_timer%<display=%player_has_spawn_timer%'
+    - '&c&lEOTW&7: &c%server_eotw_timer%<display=%server_has_eotw_timer%'
+    - '&a&lSOTW&7: &c%server_sotw_timer%<display=%server_has_sotw_timer%'
+    - '&c&lRestart&7: &4%server_restart_timer%<display=%server_has_restart_timer%'
+    - '%customtimer_lines%'
+    - '%mod_lines%'
+    - '%conquest_lines%'
+    - '%dtc_lines%'
+    - '%koth_lines%'
+    - '%rampage_lines%'
+    - '%extraction_lines%'
+  mod-mode:
+    - '&d&lStaff Mode'
+    - '&7* &5Vanished: &c%vanished%'
+    - '&7* &5Gamemode: &c%gamemode%'
+    - '&7* &5Modules: %modules%'
+    - '&7* &5Bypass: &c%modmode_bypass%<display=%has_permission_hcf.command.mod.bypass%'
+    - '&7* &5Online: &f%online%'
+  koth:
+    normal: '&9&l%name%&7: &c%time%'
+    special: '&5&l%name%&7: &c%time%'
+  conquest:
+    header: '&e&lConquest&7:'
+    no-scores: '  &7No scores yet'
+    score: '  &e%faction%&7: &c%points%'
+  dtc:
+    header: '&2&lDTC&7:'
+    no-scores: '  &7No scores yet'
+    score: '  &a%faction%&7: &c%points%'
+  custom-timer:
+    line: '%text%&7: &f%timer%'
+  custom-server-timer:
+    line: '%text%&7: &f%timer%'
+  rampage:
+    - '&4&lRampage &7(%rampage-remaining%)'
+    - ' &fKills: &c%rampage-kills%'
+    - ' &fTop Kills: &c%rampage-top-kills%'
+  extraction:
+    - '&3&lExtraction'
+    - ' &fTime: &b%extraction-remaining%'
+timers:
+  apple: 10
+  archer-mark: 10
+  bard-effect: 5
+  backstab: 15
+  combat: 30
+  enderpearl: 16
+  gapple: 21600
+  jump-effect: 15
+  home: 10
+  logout: 30
+  pvptimer: 1800
+  spawn: 10
+  speed-effect: 15
+  starting: 3600
+  stuck: 150
+  lff: 300
+limiters:
+  entity:
+    per-chunk: 25
+  world-border: 2000
+  nether-border: 2000
+  end-border: 0
+  beacon-strength: 2
+  enchants:
+    - PROTECTION_ENVIRONMENTAL;2
+    - DAMAGE_ALL;2
+    - KNOCKBACK;0
+    - FIRE_ASPECT;0
+    - ARROW_DAMAGE;4
+  potions:
+    - POISON;1;93
+    - SLOWNESS;1;67
+  blocked-potions:
+    - 2000
+    - 3000
+    - 8232
+    - 8264
+    - 16456
+    - 16424
+    - 8201
+    - 8233
+    - 8265
+    - 16393
+    - 16425
+    - 16457
+    - 16460
+    - 16428
+listeners:
+  cook-speed-multiplier: 1
+  brewing-speed-multiplier: 2
+  place-in-combat: true
+  starting-timer: false
+  disable-enderchest: true
+  experience:
+    global-multiplier: 1.0
+    looting-multiplier: 1.0
+    fortune-multiplier: 1.0
+    fishing-global-multiplier: 1.0
+    fishing-luck-multiplier: 1.0
+    furnace-multiplier: 1.0
+combat:
+  allow-end-portal-enter: false
+  command-list-type: BLACKLIST
+  command-list:
+    - spawn
+    - clear
+    - heal
+    - feed
+    - repair
+    - fly
+    - enderchest
+    - top
+    - gkit
+    - kit
+  villager:
+    knockback: false
+elo:
+  enable: true
+  points-on-kill: 10
+  points-on-death: 10
+  koth:
+    enable: true
+    points-on-win: 25
+    points-for-capper-only: false
+  conquest:
+    enable: true
+    points-on-win: 25
+    points-for-capper-only: false
+  dtc:
+    enable: true
+    points-on-win: 25
+    points-for-capper-only: false
+elevators:
+  sign: true
+  minecart: true
+kits:
+  archer:
+    enable: true
+  bard:
+    enable: true
+    effect-range: 20
+    max-energy: 100
+    bard-effects-click-combat: true
+    hold-effects-in-spawn: true
+    click-effects-in-spawn: false
+    items:
+      strength_hold:
+        displayName: Strength 1
+        itemId: 377
+        energy: 0
+        hold: true
+        potionEffect: INCREASE_DAMAGE
+        potionDuration: 100
+        potionAmplifier: 0
+        applyOnBard: false
+        otherFaction: false
+      resistance_hold:
+        displayName: Resistance 1
+        itemId: 265
+        energy: 0
+        hold: true
+        potionEffect: DAMAGE_RESISTANCE
+        potionDuration: 100
+        potionAmplifier: 0
+        applyOnBard: true
+        otherFaction: false
+      jumpboost_hold:
+        displayName: Jump Boost 2
+        itemId: 288
+        energy: 0
+        hold: true
+        potionEffect: JUMP
+        potionDuration: 100
+        potionAmplifier: 1
+        applyOnBard: true
+        otherFaction: false
+      speed_hold:
+        displayName: Speed 2
+        itemId: 353
+        energy: 0
+        hold: true
+        potionEffect: SPEED
+        potionDuration: 100
+        potionAmplifier: 1
+        applyOnBard: true
+        otherFaction: false
+      fireres_hold:
+        displayName: Fire Res 1
+        itemId: 378
+        energy: 0
+        hold: true
+        potionEffect: FIRE_RESISTANCE
+        potionDuration: 100
+        potionAmplifier: 0
+        applyOnBard: true
+        otherFaction: false
+      regen_hold:
+        displayName: Regen 1
+        itemId: 370
+        energy: 0
+        hold: true
+        potionEffect: REGENERATION
+        potionDuration: 160
+        potionAmplifier: 0
+        applyOnBard: true
+        otherFaction: false
+      strength_click:
+        displayName: Strength 2
+        itemId: 377
+        energy: 45
+        hold: false
+        potionEffect: INCREASE_DAMAGE
+        potionDuration: 110
+        potionAmplifier: 1
+        applyOnBard: true
+        otherFaction: false
+      resistance_click:
+        displayName: Strength 2
+        itemId: 265
+        energy: 40
+        hold: false
+        potionEffect: DAMAGE_RESISTANCE
+        potionDuration: 110
+        potionAmplifier: 2
+        applyOnBard: true
+        otherFaction: false
+      jumpboost_click:
+        displayName: Jump Boost 7
+        itemId: 288
+        energy: 20
+        hold: false
+        potionEffect: JUMP
+        potionDuration: 110
+        potionAmplifier: 6
+        applyOnBard: true
+        otherFaction: false
+      speed_click:
+        displayName: Speed 3
+        itemId: 353
+        energy: 30
+        hold: false
+        potionEffect: SPEED
+        potionDuration: 110
+        potionAmplifier: 2
+        applyOnBard: true
+        otherFaction: false
+      wither_click:
+        displayName: Wither 1
+        itemId: 375
+        energy: 40
+        hold: false
+        potionEffect: WITHER
+        potionDuration: 110
+        potionAmplifier: 0
+        applyOnBard: false
+        otherFaction: true
+      regen_click:
+        displayName: Regen 2
+        itemId: 370
+        energy: 35
+        hold: false
+        potionEffect: REGENERATION
+        potionDuration: 110
+        potionAmplifier: 1
+        applyOnBard: true
+        otherFaction: false
+  miner:
+    enable: true
+    invis-level: 20
+  rogue:
+    enable: true
+    backstab: 15
+kitmap:
+  rewards:
+    '1':
+      kills: 5
+      name: Golden Apple
+      commands:
+        - give %player% golden_apple:1 1
+    '2':
+      kills: 10
+      name: Murderer
+      commands:
+        - eco add %player% 100
+  money-per-kill: all
+pearls:
+  close-pearl-check: true
+  shift-fence-gate-pearl-check: true
+deathban:
+  default-time: 120
+  times:
+    DonatorOne: 90
+    DonatorTwo: 75
+    DonatorThree: 60
+settings-gui:
+  title: '%secondary%Settings'
+  item-title: '%secondary%%name%'
+  prefix:
+    active: '%primary%» %secondary%'
+    not-active: ' &7'
+  lore:
+    - ''
+    - '%primary%Do you want to see'
+    - '%primary%%name%?'
+    - ''
+    - '  %show_prefix%Show %name%'
+    - '  %hide_prefix%Hide %name%'
+    - ''
+freeze:
+  gui:
+    enabled: false
+    item:
+      name: '%teamspeak%'
+      lines:
+        - DO NOT LOGOUT, YOU HAVE 5 MINUTES
+        - https://www.teamspeak.com/downloads
+  message-repeat: 10
+  allowed-commands:
+    - /m
+    - /r
+    - /msg
+    - /reply
+    - /ts
+    - /panic
+    - /ss
+    - /freeze
+revive:
+  ranks:
+    Iron:
+      permission: revive.iron
+      cooldown: 60
+      broadcast: '&b%reviver% &ehas revived &b%revived% &ewith their &b&lIron &erank!'
+    Gold:
+      permission: revive.gold
+      cooldown: 45
+      broadcast: '&d%reviver% &ehas revived &d%revived% &ewith their &4&lGold &erank!'
+rank-broadcast:
+  enabled: true
+  name: Glacial
+  time: 5
+  messages:
+    broadcast: |-
+      &fOnline &d&lGlacial &fRank Players &7» &r%players%
+      &fBuy a &d&lGlacial &fRank @ https://store.glacial.cc
+    no-players: No online Glacial players
+    joiner:
+      color: '&a'
+      character: ', '
+BlockShop:
+  WoolShop:
+    Items:
+      '1':
+        Material: WOOL
+        Name: '&aWool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 10
+        Data:
+          Enabled: false
+          Data: 0
+      '2':
+        Material: WOOL
+        Name: '&aOrange Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 11
+        Data:
+          Enabled: true
+          Data: 1
+      '3':
+        Material: WOOL
+        Name: '&aMagenta Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 12
+        Data:
+          Enabled: true
+          Data: 2
+      '4':
+        Material: WOOL
+        Name: '&aLight Blue Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 13
+        Data:
+          Enabled: true
+          Data: 3
+      '5':
+        Material: WOOL
+        Name: '&aYellow Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 14
+        Data:
+          Enabled: true
+          Data: 4
+      '6':
+        Material: WOOL
+        Name: '&aLime Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 15
+        Data:
+          Enabled: true
+          Data: 5
+      '7':
+        Material: WOOL
+        Name: '&aPink Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 16
+        Data:
+          Enabled: true
+          Data: 6
+      '8':
+        Material: WOOL
+        Name: '&aGray Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 19
+        Data:
+          Enabled: true
+          Data: 7
+      '9':
+        Material: WOOL
+        Name: '&aLight Gray Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 20
+        Data:
+          Enabled: true
+          Data: 8
+      '10':
+        Material: WOOL
+        Name: '&aCyan Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 21
+        Data:
+          Enabled: true
+          Data: 9
+      '11':
+        Material: WOOL
+        Name: '&aPurple Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 22
+        Data:
+          Enabled: true
+          Data: 10
+      '12':
+        Material: WOOL
+        Name: '&aBlue Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 23
+        Data:
+          Enabled: true
+          Data: 11
+      '13':
+        Material: WOOL
+        Name: '&aBrown Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 24
+        Data:
+          Enabled: true
+          Data: 12
+      '14':
+        Material: WOOL
+        Name: '&aGreen Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 25
+        Data:
+          Enabled: true
+          Data: 13
+      '15':
+        Material: WOOL
+        Name: '&aRed Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 30
+        Data:
+          Enabled: true
+          Data: 14
+      '16':
+        Material: WOOL
+        Name: '&aBlack Wool'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 32
+        Data:
+          Enabled: true
+          Data: 15
+  GlassShop:
+    Items:
+      '1':
+        Material: GLASS
+        Name: '&aGlass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 10
+        Data:
+          Enabled: false
+          Data: 0
+      '2':
+        Material: STAINED_GLASS
+        Name: '&aOrange Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 11
+        Data:
+          Enabled: true
+          Data: 1
+      '3':
+        Material: STAINED_GLASS
+        Name: '&aMagenta Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 12
+        Data:
+          Enabled: true
+          Data: 2
+      '4':
+        Material: STAINED_GLASS
+        Name: '&aLight Blue Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 13
+        Data:
+          Enabled: true
+          Data: 3
+      '5':
+        Material: STAINED_GLASS
+        Name: '&aYellow Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 14
+        Data:
+          Enabled: true
+          Data: 4
+      '6':
+        Material: STAINED_GLASS
+        Name: '&aLime Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 15
+        Data:
+          Enabled: true
+          Data: 5
+      '7':
+        Material: STAINED_GLASS
+        Name: '&aPink Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 16
+        Data:
+          Enabled: true
+          Data: 6
+      '8':
+        Material: STAINED_GLASS
+        Name: '&aGray Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 19
+        Data:
+          Enabled: true
+          Data: 7
+      '9':
+        Material: STAINED_GLASS
+        Name: '&aLight Gray Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 20
+        Data:
+          Enabled: true
+          Data: 8
+      '10':
+        Material: STAINED_GLASS
+        Name: '&aCyan Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 21
+        Data:
+          Enabled: true
+          Data: 9
+      '11':
+        Material: STAINED_GLASS
+        Name: '&aPurple Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 22
+        Data:
+          Enabled: true
+          Data: 10
+      '12':
+        Material: STAINED_GLASS
+        Name: '&aBlue Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 23
+        Data:
+          Enabled: true
+          Data: 11
+      '13':
+        Material: STAINED_GLASS
+        Name: '&aBrown Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 24
+        Data:
+          Enabled: true
+          Data: 12
+      '14':
+        Material: STAINED_GLASS
+        Name: '&aGreen Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 25
+        Data:
+          Enabled: true
+          Data: 13
+      '15':
+        Material: STAINED_GLASS
+        Name: '&aRed Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 30
+        Data:
+          Enabled: true
+          Data: 14
+      '16':
+        Material: STAINED_GLASS
+        Name: '&aBlack Glass'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 32
+        Data:
+          Enabled: true
+          Data: 15
+  ClayShop:
+    Items:
+      '1':
+        Material: HARD_CLAY
+        Name: '&aHardened Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 10
+        Data:
+          Enabled: false
+          Data: 0
+      '2':
+        Material: STAINED_CLAY
+        Name: '&aOrange Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 11
+        Data:
+          Enabled: true
+          Data: 1
+      '3':
+        Material: STAINED_CLAY
+        Name: '&aMagenta Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 12
+        Data:
+          Enabled: true
+          Data: 2
+      '4':
+        Material: STAINED_CLAY
+        Name: '&aLight Blue Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 13
+        Data:
+          Enabled: true
+          Data: 3
+      '5':
+        Material: STAINED_CLAY
+        Name: '&aYellow Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 14
+        Data:
+          Enabled: true
+          Data: 4
+      '6':
+        Material: STAINED_CLAY
+        Name: '&aLime Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 15
+        Data:
+          Enabled: true
+          Data: 5
+      '7':
+        Material: STAINED_CLAY
+        Name: '&aPink Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 16
+        Data:
+          Enabled: true
+          Data: 6
+      '8':
+        Material: STAINED_CLAY
+        Name: '&aGray Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 19
+        Data:
+          Enabled: true
+          Data: 7
+      '9':
+        Material: STAINED_CLAY
+        Name: '&aLight Gray Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 20
+        Data:
+          Enabled: true
+          Data: 8
+      '10':
+        Material: STAINED_CLAY
+        Name: '&aCyan Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 21
+        Data:
+          Enabled: true
+          Data: 9
+      '11':
+        Material: STAINED_CLAY
+        Name: '&aPurple Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 22
+        Data:
+          Enabled: true
+          Data: 10
+      '12':
+        Material: STAINED_CLAY
+        Name: '&aBlue Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 23
+        Data:
+          Enabled: true
+          Data: 11
+      '13':
+        Material: STAINED_CLAY
+        Name: '&aBrown Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 24
+        Data:
+          Enabled: true
+          Data: 12
+      '14':
+        Material: STAINED_CLAY
+        Name: '&aGreen Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 25
+        Data:
+          Enabled: true
+          Data: 13
+      '15':
+        Material: STAINED_CLAY
+        Name: '&aRed Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 30
+        Data:
+          Enabled: true
+          Data: 14
+      '16':
+        Material: STAINED_CLAY
+        Name: '&aBlack Stained Clay'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 32
+        Data:
+          Enabled: true
+          Data: 15
+  WoodShop:
+    Items:
+      '1':
+        Material: LOG
+        Name: '&aOak Wood'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 10
+        Data:
+          Enabled: false
+          Data: 15
+      '2':
+        Material: LOG
+        Name: '&aSpruce Wood'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 11
+        Data:
+          Enabled: true
+          Data: 1
+      '3':
+        Material: LOG
+        Name: '&aBirch Wood'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 12
+        Data:
+          Enabled: true
+          Data: 2
+      '4':
+        Material: LOG
+        Name: '&aJungle Wood'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 13
+        Data:
+          Enabled: true
+          Data: 3
+      '5':
+        Material: LOG_2
+        Name: '&aAcacia Wood'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 14
+        Data:
+          Enabled: true
+          Data: 0
+      '6':
+        Material: LOG_2
+        Name: '&aDark Oak Wood'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 64
+        Slot: 15
+        Data:
+          Enabled: true
+          Data: 1
+Shops:
+  BuyShop:
+    Items:
+      '1':
+        Material: NETHER_WARTS
+        Name: '&aNether Wart'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 16
+        Slot: 15
+        Data:
+          Enabled: false
+          Data: 1
+      '2':
+        Material: GLOWSTONE
+        Name: '&aGlowstone'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 16
+        Slot: 16
+        Data:
+          Enabled: false
+          Data: 1
+      '3':
+        Material: SULPHUR
+        Name: '&aGun Powder'
+        Lore:
+          - '&7Price: &a$500'
+        Price: 500
+        Amount: 16
+        Slot: 16
+        Data:
+          Enabled: false
+          Data: 1
+  SellShop:
+    Items:
+      '1':
+        Material: DIAMOND_BLOCK
+        Name: '&aDiamond Block'
+        Lore:
+          - '&7Left-Click to sell 16 for &c500!'
+          - ''
+          - '&7Right-Click to sell all!'
+        Price: 500
+        SinglePrice: 31
+        Amount: 16
+        Slot: 14
+        Data:
+          Enabled: false
+          Data: 1
+      '2':
+        Material: EMERALD_BLOCK
+        Name: '&aEmerald Block'
+        Lore:
+          - '&7Left-Click to sell 16 for &c500!'
+          - ''
+          - '&7Right-Click to sell all!'
+        Price: 500
+        SinglePrice: 31
+        Amount: 16
+        Slot: 15
+        Data:
+          Enabled: false
+          Data: 1
+      '3':
+        Material: IRON_BLOCK
+        Name: '&aIron Block'
+        Lore:
+          - '&7Left-Click to sell 16 for &c500!'
+          - ''
+          - '&7Right-Click to sell all!'
+        Price: 500
+        SinglePrice: 31
+        Amount: 16
+        Slot: 16
+        Data:
+          Enabled: false
+          Data: 1
+Ranks:
+  OWNER: '&4'
+  HEAD-MANAGER: '&4'
+  MEDIAOWNER: '&4'
+  MANAGER: '&b'
+  PLATFORMADMIN: '&c'
+  SENIORADMIN1: '&c'
+  ADMIN1: '&c'
+  SENIORMOD1: '&5'
+  MOD+1: '&d'
+  MOD1: '&9'
+  TRIALMOD1: '&3'
+  PARTNER: '&d'
+  CHATMOD: '&5'
+  FAMOUS: '&d'
+  YOUTUBER: '&d'
+  GLACIAL: '&d'
+  STREAMER: '&d'
+  POLAR: '&e'
+  ARCTIC: '&c'
+  WINTER: '&a'
+  SNOW: '&5'
+  ICE: '&3'
+  FLAKE: '&f'
+  DEFAULT: '&7'
+  DEVELOPER: '&9'

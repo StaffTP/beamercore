@@ -1,0 +1,17 @@
+lunar:
+  nametags: #Players need hcf.lunar.nametags to see the below nametags otherwise noperm will be shown for lunar clients
+    modmode: #This nametag needs the permission: hcf.lunar.nametags.modmode otherwise factionless or faction will show
+      lines:
+        - "&6[&eModMode&6]"
+        - "%other-relation%%other%"
+    factionless:
+      lines:
+        - "&6[&7Factionless&6]"
+        - "%other-relation%%other%"
+    faction:
+      lines:
+        - "&6[%other-relation%%other-faction-name% &6⎜ %other-faction-dtr-display%&6]"
+        - "%other-relation%%other%"
+    noperm:
+      lines:
+        - "%other-relation%%other%"

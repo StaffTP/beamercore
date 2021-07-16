@@ -1,0 +1,19 @@
+##########################################
+#      __    __    ______  _______       #
+#     |  |  |  |  /      ||   ____|      #
+#     |  |__|  | |  ,----'|  |__         #
+#     |   __   | |  |     |   __|        #
+#     |  |  |  | |  `----.|  |           #
+#     |__|  |__|  \______||__|           #
+#                                        #
+##########################################
+
+name: ${project.artifactId}
+version: ${project.version}
+main: ${project.main}
+authors: [Nick, HuliPvP, scynse]
+description: HCF core forked by scynse
+depend: [ProtocolLib]
+softdepend: [Vault, LunarClient-API, HolographicDisplays]
+commands:
+  vanish:

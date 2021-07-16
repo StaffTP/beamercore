@@ -1,0 +1,10 @@
+reclaim:
+  Iron: # Ex permission: reclaim.iron
+    broadcast: '&b%player% &ehas just reclaimed their items for &b&lIron!'
+    commands: # The list of commands
+    - give %player% iron 1
+  Gold:
+    broadcast: '&c%player% &ehas just reclaimed their items for &4&lGold!'
+    commands:
+    - give %player% gold 64
+reclaimed: []

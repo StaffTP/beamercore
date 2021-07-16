@@ -1,0 +1,248 @@
+### Global Variables ###
+# %primary% (Primary Color), %secondary% (Secondary Color),
+# %servername% (Server Name), %website% (Server Website),
+# %teamspeak% (Server Teamspeak), %store% (Server Store)
+########################
+
+### Variables for Help ###
+# %map% (Current Map Number), %mapstartdate% (Map Start [Nov. 22nd])
+# %warzone% (Warzone Size), %border% (World Border Size)
+##########################
+
+help:
+  main:
+    - "&7&m----------------------------------------------------"
+    - "%primary%&l%servername% &7- %secondary%Help"
+    - "&7&m----------------------------------------------------"
+    - "&9Map Information:"
+    - "&eCurrent Map (#%map%): &7Started on %mapstartdate%"
+    - "&eOverworld Border: &7%border%"
+    - "&eWarzone Until: &7%warzone%"
+    - "&eEnchantment Limits: &7Sharpness 1, Protection 2, Power 4"
+    - "&eDeathban: &72 hours"
+    - " "
+    - "&9Helpful Commands:"
+    - "&e/report <player> <reason> &7- Report players with this."
+    - "&e/request <message> &7- Request assistance."
+    - " "
+    - "&9Chat Commands:"
+    - "&eGlobal Chat: &7Prefix your message with '&d!&7' or type &7'&d/gc&7' to set."
+    - "&eFaction Chat: &7Prefix your message with '&d@&7' or type &7'&d/tc&7' to set."
+    - "&eOfficer Chat: &7Prefix your message with '&d^&7' or type &7'&d/oc&7' to set."
+    - "&eGlobal Chat: &7Type '&d/tgc&7' to toggle chat visibility."
+    - " "
+    - "&9Other Information:"
+    - "&eOfficial Teamspeak: &d%teamspeak%"
+    - "&eWebsite: &d%website%/"
+    - "&eRules: &d%website%/rules"
+    - "&eStore: &d%store%/"
+    - "&7&m----------------------------------------------------"
+  coords:
+    - "&7&m----------------------------------------------------"
+    - "%primary%&lCoords %secondary%Help"
+    - "&7&m----------------------------------------------------"
+    - "&aSpawn &7- &a0, 0"
+    - "&cYay KoTH &7- &a2500, 2500"
+    - "&7&m----------------------------------------------------"
+  economy:
+    - "&7&m----------------------------------------------------"
+    - "%primary%&lEconomy %secondary%Help"
+    - "&7&m----------------------------------------------------"
+    - "&e/eco set <target> <balance> - Set a player's balance"
+    - "&e/eco give <target> <balance> - Give a player money"
+    - "&e/eco take <target> <balance> - Take money from a player"
+    - "&7&m----------------------------------------------------"
+  lives:
+    - "&7&m----------------------------------------------------"
+    - "%primary%&lLives %secondary%Help"
+    - "&7&m----------------------------------------------------"
+    - "&e/lives set <target> <amount> - Set a player's lives"
+    - "&e/lives add  <target> <amount> - Give a player lives"
+    - "&e/lives take <target> <amount> - Take lives from a player"
+    - "&7&m----------------------------------------------------"
+  pvp:
+    - "&7&m----------------------------------------------------"
+    - "%primary%&lPvP %secondary%Help"
+    - "&7&m----------------------------------------------------"
+    - "&e/pvp enable - Enable pvp for yourself"
+    - "&e/pvp revive <target> - Revive a player with one of your own lives"
+    - "&e/pvp give <target> - Give a player a Pvp timer"
+    - "&e/pvp set <target> <amount> - Set a player's Pvp time"
+    - "&7&m----------------------------------------------------"
+  filter:
+    - "&7&m----------------------------------------------------"
+    - "%primary%&lFilter %secondary%Help"
+    - "&7&m----------------------------------------------------"
+    - "&e/filter list - See all of your filtered materials"
+    - "&e/filter toggle - Toggle your item filter on and off"
+    - "&e/filter add <material> - Add an item to your filter"
+    - "&e/filter remove <material> - Remove an item from your filter"
+    - "&7&m----------------------------------------------------"
+
+faction:
+  help:
+    main:
+      - "&7&m----------------------------------------------------"
+      - "%primary%&l%servername% &7- %secondary%Faction Help"
+      - "&7&m----------------------------------------------------"
+      - "&9General Commands:"
+      - "&e/f create <name> &7- Create a new faction"
+      - "&e/f join <name> &7- Accept a pending invitation"
+      - "&e/f lives &7- Show lives usage"
+      - "&e/f home &7- Teleport to your faction home"
+      - "&e/f stuck &7- Teleport out of enemy territory"
+      - "&e/f deposit <amount;all> &7- Deposit money into your faction"
+      - "&e/f leave &7- Leave your current team"
+      - "&e/f subclaim &7- Show the subclaim help page"
+      - " "
+      - "&9Information Commands:"
+      - "&e/f who [faction;player] &7- Show faction information"
+      - "&e/f list &7- Show a list of online factions"
+      - "&e/f map &7- Show nearby claims"
+      - " "
+      - "&9Captains Commands:"
+      - "&e/f invite <player> &7- Invite a player to the faction"
+      - "&e/f uninvite <player> &7- Revoke an invitation"
+      - "&e/f kick <player> &7- Kick a player from the faction"
+      - "&e/f invites &7- Show all invitations"
+      - "&e/f claim &7- Start a claim for your faction"
+      - "&e/f sethome &7- Set your faction's home"
+      - "&e/f withdraw <amount;all> &7- Withdraw money from the faction"
+      - " "
+      - "&9Coleader Commands:"
+      - "&e/f captain &7- Show captain management commands"
+      - "&e/f unclaim &7- Remove the faction's claim"
+      - "&e/f announcement [message] &7- Set the faction's announcement"
+      - " "
+      - "&9Leader Commands:"
+      - "&e/f coleader &7- Show officer management commands"
+      - "&e/f revive <player> &7- Revive a teammate using faction lives"
+      - "&e/f rename <name> &7- Rename your faction"
+      - "&e/f disband &7- Disband your faction"
+      - "&7&m----------------------------------------------------"
+    captain:
+      - "&7&m----------------------------------------------------"
+      - "%primary%&lCaptain %secondary%Help"
+      - "&7&m----------------------------------------------------"
+      - "&e/f captain add <player> &7- Add a captain to the Faction"
+      - "&e/f captain remove <player> &7- Remove a captain to the Faction"
+      - "&e/f captain list &7- List all of the captains in the Faction"
+    coleader:
+      - "&7&m----------------------------------------------------"
+      - "%primary%&lColeader %secondary%Help"
+      - "&7&m----------------------------------------------------"
+      - "&e/f coleader add <player> &7- Add a coleader to the Faction"
+      - "&e/f coleader remove <player> &7- Remove a coleader to the Faction"
+      - "&e/f coleader list &7- List all of the coleaders in the Faction"
+    subclaiming:
+      - "&7&m----------------------------------------------------"
+      - "%primary%&lSubclaiming %secondary%Help"
+      - "&7&m----------------------------------------------------"
+      - "&7Place a sign on top of a container block and in"
+      - "&7the first line type [Subclaim]. In the second line"
+      - "&7type the name of the member the container belongs to."
+      - "&7Example:"
+      - "[Subclaim]"
+      - "Syrm"
+    claiming:
+      - "&6Faction land claim started."
+      - "&eLeft click at a corner of the land you'd like to claim."
+      - "&eRight click on the second corner of the land you'd like to claim."
+      - "&eCrouch left click the air to purchase your claim."
+  show:
+    system:
+      - "&7&m----------------------------------------------------"
+      - "%name%"
+      - "&eLocation: &f%home%"
+      - "&7&m----------------------------------------------------"
+    player:
+      - "&7&m----------------------------------------------------"
+      - "&9%name% &7[%online%/%players%] &3- &eHQ: &f%home%"
+      - "&eLeader: %leader%"
+      - "&eColeaders: %coleaders%"
+      - "&eCaptains: %captains%"
+      - "&eMembers: %members%"
+      - "&eBalance: &9$%balance%"
+      - "&ePoints: &9%points%"
+      - "&eKOTH Captures: &9%kothcaptures%"
+      - "&eDeaths until Raidable: &a%dtr%%dtrsymbol%"
+      - "&eTime Until Regen: &9%regen%"
+      - "&eStatus: &9%open%" # Only shows if open
+      - "&eLives: &c%lives%" # Member + Staff Only
+      - "&eAnnouncement: &d%announcement%" # Member + Staff Only
+      - "&7&m----------------------------------------------------"
+
+shop:
+  lines:
+    buy:
+      - "&aBought"
+      - "x%amount% %item%"
+      - "&afor"
+      - "&f$%price%"
+    sell:
+      - "&aSold"
+      - "x%amount% %item%"
+      - "&afor"
+      - "&f$%price%"
+    insufficient:
+      - "&cInsufficient"
+      - "&cfunds for"
+      - "%item%"
+      - " "
+    no-items:
+      - "&cYou have"
+      - "&cno"
+      - "%item%"
+      - " "
+
+other:
+  lff:
+    - "&7&m----------------------------------------------------"
+    - "%primary%%player% &eis looking for a &6faction&e!"
+    - "&7&m----------------------------------------------------"
+
+staff:
+  frozen:
+    - "&f████&c█&f████"
+    - "&f███&c█&6█&c█&f███"
+    - "&f██&c█&6█&0█&6█&c█&f██ &4&lDo NOT log out!"
+    - "&f██&c█&6█&0█&6█&c█&f██ &cIf you do, you will be banned!"
+    - "&f█&c█&6██&0█&6██&c█&f█ &ePlease download &e&lTeamspeak 3 &eand join"
+    - "&f█&c█&6█████&c█&f█ &e%teamspeak%"
+    - "&c█&6███&0█&6███&c█"
+    - "&c█████████"
+  paniced:
+    - "&f████&c█&f████"
+    - "&f███&c█&6█&c█&f███ &c&lYou are in a panic!"
+    - "&f██&c█&6█&0█&6█&c█&f██"
+    - "&f██&c█&6█&0█&6█&c█&f██ &ePlease wait for a staff"
+    - "&f█&c█&6██&0█&6██&c█&f█ &amember to contact you!"
+    - "&f█&c█&6█████&c█&f█"
+    - "&c█&6███&0█&6███&c█ &c&n%teamspeak%"
+    - "&c█████████"
+
+
+
+### Variables for Faction Show (System Factions) ###
+# %name% (Faction Name)
+# %home% (Faction Home [x, y, z])
+####################################################
+
+### Variables for Faction Show (Player Factions) ###
+# %name% (Faction Name)
+# %home% (Faction Home [x, y, z])
+# %online% (Online Count)
+# %players% (Player Count)
+# %leader% (Leader)
+# %coleaders%
+# %captains%
+# %members%
+# %balance%
+# %kothcaptures%
+# %dtr%
+# %maxdtr%
+# %regen%
+# %open%
+# %lives% # Member + Staff Only
+# %announcement% # Member + Staff Only
+####################################################

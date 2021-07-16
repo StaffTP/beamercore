@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>me.hulipvp.hcf</groupId>
+    <artifactId>HCF</artifactId>
+    <version>2.0</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.main>${project.groupId}.${project.artifactId}</project.main>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>vault-repo</id>
+            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
+        </repository>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>http://repo.dmulloy2.net/nexus/repository/public/</url>
+        </repository>
+        <repository>
+            <id>viaversion-repo</id>
+            <url>https://repo.viaversion.com</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>http://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
+        <repository>
+            <id>lunarclient-public</id>
+            <url>https://maven.moonsworth.com/repository/lunarclient-public/</url>
+        </repository>
+        <repository>
+            <id>commons-io</id>
+            <url>https://mvnrepository.com/artifact/commons-io/commons-io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>16.0.1</version>
+        </dependency>
+
+        <!-- Spigots (keep this order) -->
+        <dependency>
+            <groupId>org.github.paperspigot</groupId>
+            <artifactId>paperspigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/spigot/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>LATEST</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/spigot/spigot-1.7.10-SNAPSHOT-b1655.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.github.paperspigot</groupId>
+            <artifactId>paperspigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/spigot/paper.jar</systemPath>
+        </dependency>
+        <!-- End Spigots -->
+
+        <!-- ProtocolLibs -->
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>3.7</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ProtocolLib-3.7.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>4.6.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ProtocolLib-4.6.jar</systemPath>
+        </dependency>
+        <!-- End ProtocolLibs -->
+
+        <!-- Fusion Development -->
+
+        <dependency>
+            <groupId>com.fusiongames.abilities</groupId>
+            <artifactId>FusionAbilities</artifactId>
+            <version>0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/gUtilities-0.1-SNAPSHOT.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.fusiongames.lootboxes</groupId>
+            <artifactId>FusionLootboxes</artifactId>
+            <version>0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/FusionLootboxes-0.1-SNAPSHOT.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.fusiongames.airdrops</groupId>
+            <artifactId>FusionAirdrops</artifactId>
+            <version>0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/FusionAirdrops-0.1-SNAPSHOT.jar</systemPath>
+        </dependency>
+        <!-- End Fusion Development -->
+
+
+        <!-- Aqua -->
+
+        <dependency>
+            <groupId>com.fusiongames.hexa</groupId>
+            <artifactId>Hexa</artifactId>
+            <version>0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/AquaCoreAPI.jar</systemPath>
+        </dependency>
+
+        <!-- End Aqua -->
+
+        <!-- Tab API -->
+        <dependency>
+            <groupId>me.allen</groupId>
+            <artifactId>Ziggurat</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Lunar API -->
+        <dependency>
+            <groupId>com.lunarcliednt</groupId>
+            <artifactId>bukkitdapi</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/LunarClient-API 1.0.jar</systemPath>
+        </dependency>
+
+        <!-- End Lunar API -->
+
+        <!-- Database Drivers -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <!-- End Database Drivers -->
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Plugin Hooks -->
+        <dependency>
+            <groupId>net.milkbowl.vault</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.7</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.joeleoli.nucleus</groupId>
+            <artifactId>nucleus</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.jodfgdfeleoli.nucleus</groupId>
+            <artifactId>nugdfgcleus</artifactId>
+            <version>1.0-SNAPgfdSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/LuckPerms 5.2.118.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>some.local.depend</groupId>
+            <artifactId>Basic2</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/Basic2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.broustudio.KrikuAPI</groupId>
+            <artifactId>KrikuAPI</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/KirikuAPI.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>some.local.depend</groupId>
+            <artifactId>Utils</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/Utils-1.0-SNAPSHOT.jar</systemPath>
+        </dependency>
+        <!-- End Plugin Hooks -->
+
+        <!-- Other -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Hologram shit -->
+        <dependency>
+            <groupId>id.idk</groupId>
+            <artifactId>HolographicDisplays</artifactId>
+            <version>2.2.6</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/HolographicDisplays.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>net.brcdev.shopgui</groupId>
+            <artifactId>ShopGuiPlusApi</artifactId>
+            <version>LATEST</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ShopGUIPlus-1.31.0.jar</systemPath>
+        </dependency>
+        <!-- End Other -->
+
+        <dependency>
+            <groupId>some.local.depend</groupId>
+            <artifactId>ZoomAPI</artifactId>
+            <version>1.4</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/Zoom-API-1.4.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <defaultGoal>clean package install</defaultGoal>
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources/</directory>
+                <includes>
+                    <include>*.yml</include>
+                </includes>
+            </resource>
+            <resource>
+                <targetPath>./features/</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources/features/</directory>
+                <includes>
+                    <include>*.yml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.16.16</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>${project.artifactId}</finalName>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.apache.commons.pool2</pattern>
+                                    <shadedPattern>${project.groupId}.lib.org.apache.commons.pool2</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.bson</pattern>
+                                    <shadedPattern>${project.groupId}.lib.org.bson</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>redis.clients</pattern>
+                                    <shadedPattern>${project.groupId}.lib.redis.clients</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.google.gson</pattern>
+                                    <shadedPattern>${project.groupId}.lib.com.google.gson</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.mongodb</pattern>
+                                    <shadedPattern>${project.groupId}.lib.com.mongodb</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.github.wvengen</groupId>-->
+<!--                <artifactId>proguard-maven-plugin</artifactId>-->
+<!--                <version>2.0.14</version>-->
+
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>net.sf.proguard</groupId>-->
+<!--                        <artifactId>proguard-base</artifactId>-->
+<!--                        <version>5.3.2</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>proguard</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <libs>-->
+<!--                        <lib>${java.home}/lib/rt.jar</lib>-->
+<!--                        <lib>${java.home}/lib/jce.jar</lib>-->
+<!--                    </libs>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>com.licel</groupId>-->
+<!--                <artifactId>stringer-maven-plugin</artifactId>-->
+<!--                <version>3.0.3</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>stringer</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <verbose>true</verbose>-->
+<!--                            <checkCaller>true</checkCaller>-->
+<!--                            <protectionElements>-->
+<!--                                <protectionElement>-->
+<!--                                    <stringEncryption>-->
+<!--                                        <mode>filter</mode>-->
+<!--                                        <filters>-->
+<!--                                            <filter><![CDATA[me/nick/hcf/final /*]]></filter>-->
+<!--                                        </filters>-->
+<!--                                        <checkCaller>true</checkCaller>-->
+<!--                                    </stringEncryption>-->
+<!--                                </protectionElement>-->
+<!--                            </protectionElements>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
+</project>

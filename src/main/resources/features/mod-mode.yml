@@ -1,0 +1,69 @@
+mod-mode:
+  enabled: true # Basically removes all commands regarding /mod, /v, /freeze, /panic, /inspect, /invsee (and on join mod mode)
+  on-join-enabled: true
+  mod-bypass-also-works-in-vanish: true
+  items:
+    compass:
+      name: "%primary%Teleportation Compass"
+      permission: ""
+      slot: 1
+      data: 0
+      itemId: 345
+      action: "UNHANDLED"
+      lore: []
+    inspector:
+      name: "%primary%Inspection Book"
+      permission: ""
+      slot: 2
+      data: 0
+      itemId: 340
+      action: "INSPECTOR"
+      lore: []
+    worldedit-wand:
+      name: "%primary%WorldEdit Wand"
+      permission: "worldedit.wand"
+      slot: 3
+      data: 0
+      itemId: 271
+      action: "UNHANDLED"
+      lore: []
+    random-tp:
+      name: "%primary%Random TP"
+      permission: ""
+      slot: 7
+      data: 0
+      itemId: 347
+      action: "RANDOM_TP"
+      lore: []
+    freeze:
+      name: "%primary%Freeze"
+      permission: "" #
+      slot: 5
+      data: 0
+      itemId: 79
+      action: "FREEZE"
+      lore: []
+    online-staff:
+      name: "%primary%Online Staff"
+      permission: ""
+      slot: 8
+      data: 3
+      itemId: 397
+      action: "ONLINE_STAFF"
+      lore: []
+    vanish-hidden:
+      name: "%primary%Become Visible"
+      permission: ""
+      slot: 9
+      data: 8
+      itemId: 351
+      action: "VANISH_OFF"
+      lore: []
+    vanish-visible:
+      name: "%primary%Become Hidden"
+      permission: ""
+      slot: 9
+      data: 10
+      itemId: 351
+      action: "VANISH_ON"
+      lore: []
